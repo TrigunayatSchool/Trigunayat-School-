@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trigunayat School</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffaf2;--surf:#fff;--tx:#1d2433;--mut:#5b6475;--pri:#1f4e8c;--pri2:#3b82d6;--acc:#f0a812;--bd:#eadfc9;--on:#fff;--sh:0 8px 24px rgba(31,78,140,.12);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e131d;--surf:#18202f;--tx:#eef1f7;--mut:#a3adc2;--pri:#79aef0;--pri2:#4b8fe0;--acc:#f3bd3f;--bd:#2a3447;--on:#0b1220;--sh:0 8px 24px rgba(0,0,0,.4);color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:var(--surf);border-bottom:1px solid var(--bd)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:58px}
+.logo{font-weight:800;color:var(--pri);text-decoration:none;font-size:18px;white-space:nowrap}
+nav{display:flex;gap:16px;overflow-x:auto;font-size:14px;scrollbar-width:none}
+nav a{text-decoration:none;color:var(--mut);white-space:nowrap;font-weight:600}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--pri),var(--pri2) 60%,#6fb3ff);color:#fff;text-align:center;padding:64px 0 90px}
+.hero .wrap{position:relative;z-index:1}
+.badge{display:inline-block;background:var(--acc);color:#1d2433;font-weight:700;font-size:13px;padding:5px 14px;border-radius:99px}
+h1{font-size:clamp(34px,9vw,58px);line-height:1.1;margin:16px 0 12px;font-weight:800}
+.hero p{max-width:560px;margin:0 auto 26px;font-size:17px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:700;padding:13px 26px;border-radius:99px;text-decoration:none;background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;text-align:center}
+.btn.alt{background:transparent;color:var(--pri);border:2px solid var(--pri)}
+.hero .btn{background:#fff;color:#1f4e8c}
+.hero .btn.alt{background:transparent;color:#fff;border-color:#fff}
+section{padding:40px 0}
+h2{font-size:28px;margin:0 0 6px;font-weight:800;color:var(--pri)}
+.sub{color:var(--mut);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:var(--surf);border:1px solid var(--bd);border-radius:20px;padding:20px;box-shadow:var(--sh)}
+.card h3{margin:8px 0 4px;font-size:17px}
+.card p{margin:0;color:var(--mut);font-size:15px}
+.ic{font-size:30px;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:rgba(240,168,18,.2)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;margin-top:16px}
+.stats b{display:block;font-size:22px;color:var(--pri)}
+.stats span{font-size:13px;color:var(--mut)}
+.list{margin:8px 0 0;padding-left:20px;color:var(--mut);font-size:15px}
+.notice{border-left:5px solid var(--acc)}
+.steps{counter-reset:s;display:grid;gap:12px;padding:0;list-style:none;margin:0}
+.steps li{counter-increment:s;background:var(--surf);border:1px solid var(--bd);border-radius:18px;padding:14px 16px 14px 62px;position:relative;color:var(--mut)}
+.steps li:before{content:counter(s);position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--pri);color:#fff;font-weight:700;display:grid;place-items:center}
+.steps b{color:var(--tx)}
+form{display:grid;gap:13px;max-width:540px;background:var(--surf);border:1px solid var(--bd);border-radius:22px;padding:22px}
+label{font-size:14px;font-weight:600;display:grid;gap:5px}
+input,select,textarea{font:inherit;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);width:100%}
+textarea{min-height:90px;resize:vertical}
+.stars{display:flex;gap:6px}
+.stars button{background:none;border:0;font-size:32px;cursor:pointer;color:var(--bd);padding:0}
+.stars button.on{color:var(--acc)}
+.drop{display:grid;place-items:center;text-align:center;gap:4px;border:2px dashed var(--pri2);border-radius:14px;padding:16px;cursor:pointer;color:var(--mut);font-weight:600}
+.drop input{display:none}
+.prev{display:flex;gap:8px;flex-wrap:wrap}
+.prev img{width:68px;height:68px;object-fit:cover;border-radius:12px;border:1px solid var(--bd)}
+.note{font-size:13px;color:var(--mut);margin:0}
+.contact{display:grid;gap:12px;max-width:540px}
+footer{background:var(--surf);border-top:1px solid var(--bd);padding:26px 0;text-align:center;color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#top">🏫 Trigunayat School</a>
+<nav><a href="#about">About</a><a href="#classes">Classes</a><a href="#labs">Labs</a><a href="#admission">Admission</a><a href="#fees">Fees</a><a href="#enquiry">Enquiry</a><a href="#feedback">Feedback</a><a href="#contact">Contact</a></nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<span class="badge">Since 1969</span>
+<h1>Trigunayat School</h1>
+<p>Nursery to Class 12. Practical learning and lab facilities, trusted by families for over 50 years.</p>
+<div class="btns"><a class="btn" href="#enquiry">Admission Enquiry</a><a class="btn alt" href="tel:+918709481711">📞 Call Us</a></div>
+</div></div>
+
+<section id="about"><div class="wrap">
+<h2>About Us</h2>
+<p class="sub">Serving education since 1969.</p>
+<div class="card"><p>At Trigunayat School, we believe children learn best by doing, not just memorizing. That is why we focus on practical learning, so concepts are understood clearly and remembered for life.</p></div>
+<div class="stats">
+<div class="card"><b>1969</b><span>Established</span></div>
+<div class="card"><b>Nursery–12</b><span>All classes</span></div>
+<div class="card"><b>Labs</b><span>Practical focus</span></div>
+</div></div></section>
+
+<section id="classes"><div class="wrap">
+<h2>Classes</h2>
+<p class="sub">Nursery to Class 12 in one school.</p>
+<div class="grid">
+<div class="card"><div class="ic">🧸</div><h3>Nursery – UKG</h3><p>A joyful start through play and activities.</p></div>
+<div class="card"><div class="ic">📚</div><h3>Class 1 – 5</h3><p>A strong foundation in reading, writing and maths.</p></div>
+<div class="card"><div class="ic">🔭</div><h3>Class 6 – 8</h3><p>Building scientific curiosity and thinking skills.</p></div>
+<div class="card"><div class="ic">🎯</div><h3>Class 9 – 10</h3><p>Board exam preparation with concepts and practicals.</p></div>
+<div class="card"><div class="ic">🎓</div><h3>Class 11 – 12</h3><p>Guided learning for a strong career path.</p></div>
+</div></div></section>
+
+<section id="labs"><div class="wrap">
+<h2>Labs &amp; Practical Learning</h2>
+<p class="sub">See it, do it, learn it.</p>
+<div class="grid">
+<div class="card"><div class="ic">🧪</div><h3>Well-equipped Labs</h3><p>Students perform experiments themselves.</p></div>
+<div class="card"><div class="ic">🛠️</div><h3>Hands-on Learning</h3><p>Equal attention to theory and practicals.</p></div>
+<div class="card"><div class="ic">💡</div><h3>Concept Clarity</h3><p>Understanding leads to better results.</p></div>
+</div></div></section>
+
+<section id="board"><div class="wrap">
+<h2>Board &amp; Streams</h2>
+<p class="sub">Bihar Board curriculum, taught the practical way.</p>
+<div class="grid">
+<div class="card"><div class="ic">🏛️</div><h3>Bihar Board (BSEB)</h3><p>Classes follow the Bihar School Examination Board syllabus.</p></div>
+<div class="card"><div class="ic">📘</div><h3>Class 11 – 12 Streams</h3><ul class="list"><li>Science</li><li>Commerce</li><li>Arts</li></ul></div>
+</div></div></section>
+
+<section id="admission"><div class="wrap">
+<h2>Admission Process</h2>
+<p class="sub">Simple steps to join us.</p>
+<ol class="steps">
+<li><b>Enquire</b><br>Fill the enquiry form below or call us.</li>
+<li><b>Visit the school</b><br>Meet our team and see the labs and classrooms.</li>
+<li><b>Submit documents</b><br>Previous marksheet, Transfer Certificate (TC), Aadhaar card, birth certificate and passport-size photos.</li>
+<li><b>Confirm admission</b><br>Pay the fees and your child's seat is confirmed.</li>
+</ol></div></section>
+
+<section id="fees"><div class="wrap">
+<h2>Fee Structure</h2>
+<p class="sub">Fees differ by class, so please contact the school office for the latest details.</p>
+<div class="card"><p>Call <b>8709481711</b> or send an enquiry and we will share the class-wise fee details.</p>
+<div class="btns" style="justify-content:flex-start;margin-top:14px"><a class="btn" href="tel:+918709481711">📞 Ask about Fees</a></div></div></div></section>
+
+<section id="facilities"><div class="wrap">
+<h2>Facilities</h2>
+<p class="sub">Everything a student needs to learn well.</p>
+<div class="grid">
+<div class="card"><div class="ic">🧪</div><h3>Science Labs</h3><p>Practical experiments for hands-on learning.</p></div>
+<div class="card"><div class="ic">📖</div><h3>Library</h3><p>Books and a quiet place to read.</p></div>
+<div class="card"><div class="ic">🖥️</div><h3>Smart Classes</h3><p>Visual and digital learning support.</p></div>
+<div class="card"><div class="ic">⚽</div><h3>Sports &amp; Play</h3><p>Playground and activities for healthy growth.</p></div>
+</div></div></section>
+
+<section id="notice"><div class="wrap">
+<h2>Notice Board</h2><p class="sub">&nbsp;</p>
+<div class="card notice"><h3>📢 Admissions Open</h3><p>Admissions are open for Nursery to Class 12. Contact the school or send an enquiry to reserve a seat.</p></div>
+</div></section>
+
+<section id="enquiry"><div class="wrap">
+<h2>Admission Enquiry</h2>
+<p class="sub">Fill in the form and we will get back to you soon.</p>
+<form id="fe">
+<label>Student's name<input name="s" required></label>
+<label>Parent's name<input name="p" required></label>
+<label>Phone number<input name="ph" type="tel" inputmode="tel" required></label>
+<label>Class for admission
+<select name="c"><option>Nursery</option><option>LKG</option><option>UKG</option><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option></select></label>
+<label>Message (optional)<textarea name="m"></textarea></label>
+<button class="btn" type="submit">Send Enquiry on WhatsApp</button>
+<p class="note">WhatsApp will open with your message already written.</p>
+</form></div></section>
+
+<section id="feedback"><div class="wrap">
+<h2>Review &amp; Feedback</h2>
+<p class="sub">Your opinion matters to us. Add photos if you like.</p>
+<form id="ff">
+<label>Your name<input name="n" required></label>
+<label>Rating<span class="stars" id="stars"></span></label>
+<label>Your review<textarea name="f" required></textarea></label>
+<label class="drop">📷 Add photos (optional)<small>Tap to choose up to 4 photos</small><input type="file" id="ph" accept="image/*" multiple></label>
+<div class="prev" id="prev"></div>
+<button class="btn" type="submit">Send Review</button>
+<p class="note">WhatsApp will open with your review. Attach your photos in that chat and press send.</p>
+</form></div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Contact Us</h2>
+<p class="sub">We'd love to hear from you.</p>
+<div class="contact">
+<a class="btn" href="tel:+918709481711">📞 8709481711</a>
+<a class="btn alt" href="https://wa.me/918709481711" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+<a class="btn alt" href="https://www.google.com/maps/search/Trigunayat+School" target="_blank" rel="noopener">📍 Get Directions</a>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">© Trigunayat School · Since 1969</div></footer>
+
+<script>
+var N="918709481711",rate=0;
+function send(t){var a=document.createElement("a");a.href="https://wa.me/"+N+"?text="+encodeURIComponent(t);a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()}
+var st=document.getElementById("stars");
+for(var i=1;i<=5;i++){(function(i){var b=document.createElement("button");b.type="button";b.textContent="★";b.setAttribute("aria-label",i+" star");b.onclick=function(){rate=i;[].forEach.call(st.children,function(x,j){x.className=j<i?"on":""})};st.appendChild(b)})(i)}
+var ph=document.getElementById("ph"),pv=document.getElementById("prev");
+ph.onchange=function(){pv.innerHTML="";[].slice.call(ph.files,0,4).forEach(function(f){var im=document.createElement("img");im.src=URL.createObjectURL(f);im.alt="Selected photo";pv.appendChild(im)})};
+document.getElementById("fe").onsubmit=function(e){e.preventDefault();var f=e.target;
+send("*Admission Enquiry*\nStudent: "+f.s.value+"\nParent: "+f.p.value+"\nPhone: "+f.ph.value+"\nClass: "+f.c.value+"\nMessage: "+(f.m.value||"-"))};
+document.getElementById("ff").onsubmit=function(e){e.preventDefault();var f=e.target,n=Math.min(ph.files.length,4);
+send("*Review*\nName: "+f.n.value+"\nRating: "+(rate?rate+"/5":"-")+"\nReview: "+f.f.value+(n?"\nPhotos: "+n+" (attaching in this chat)":""))};
+</script>
+</body>
+</html>
